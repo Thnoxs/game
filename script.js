@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ROTATION_SPEED: 0.5,
 
         // Pipes
-        PIPE_SPEED: 10,
+        PIPE_SPEED: 6,
         PIPE_WIDTH: 80,
         PIPE_GAP: 180, // Vertical gap
         PIPE_SPAWN_RATE: 120, // Frames between spawns
