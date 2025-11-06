@@ -1,0 +1,209 @@
+/* style.css */
+:root {
+    --text-color: #ffffff;
+
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    background: #000;
+    color: var(--text-color);
+}
+
+#gameCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Screen Shake Animation */
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-5px, -5px); }
+    20% { transform: translate(5px, 5px); }
+    30% { transform: translate(-5px, 5px); }
+    40% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, -5px); }
+    60% { transform: translate(5px, 5px); }
+    70% { transform: translate(-5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    90% { transform: translate(0, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+.shake {
+    animation: shake 0.3s linear;
+}
+
+/* In-Game UI */
+#uiContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-shadow: 
+        0 0 5px #000, 
+
+}
+
+#scoreText {
+    align-self: flex-start;
+}
+
+#controlsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+#coinContainer {
+    display: flex;
+    align-items: center;
+}
+
+#coinIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    /* Add glow to icon */
+    filter: drop-shadow(0 0 8px );
+}
+
+#pauseButton {
+    pointer-events: all;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-shadow: 0 0 5px #000;
+}
+
+#pauseButton:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* UI Overlays */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.overlay h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px;
+}
+
+.overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.overlay button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background: #ffc107; /* Yellow */
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.overlay button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #uiContainer {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    #coinIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #pauseButton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .overlay button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+
+    #infoContainer {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* तत्वों के बीच थोड़ी जगह */
+}
+
+#distanceTimeText, #heightText {
+    font-size: 1.5rem; /* मुख्य स्कोर से छोटा */
+    /* **[ज़रूरी]** glow effect बरकरार रखें */
+    text-shadow: 
+        0 0 5px #000, 
+        0 0 10px , 
+        0 0 15px ;
+}
+
+@media (max-width: 600px) {
+    #distanceTimeText, #heightText {
+        font-size: 1rem;
+    }
+}
+}

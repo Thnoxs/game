@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Pixel Flap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="uiContainer">
+        <div id="scoreText">SCORE: 0</div>
+        <div id="distanceTimeText">TIME: 0s</div>
+            <div id="heightText">HEIGHT: 0px</div>
+        <div id="controlsContainer">
+            <div id="coinContainer">
+                <img id="coinIcon" src="coin.png" alt="Coin">
+                <span id="coinText">x 0</span>
+            </div>
+            <button id="pauseButton">||</button>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="overlay">
+        <h1>Loading...</h1>
+    </div>
+
+    <div id="startOverlay" class="overlay hidden">
+        <h1>Pixel Flap</h1>
+        <p>Click, Tap, or Press Space to Start</p>
+        <button id="startButton">Start Game</button>
+    </div>
+
+    <div id="gameOverOverlay" class="overlay hidden">
+        <h1>Game Over</h1>
+        <p id="finalScoreText">Score: 0</p>
+        <p id="finalCoinText">Coins: 0</p>
+        <button id="restartButton">Restart</button>
+    </div>
+
+    <div id="pauseOverlay" class="overlay hidden">
+        <h1>Paused</h1>
+        <button id="resumeButton">Resume</button>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
